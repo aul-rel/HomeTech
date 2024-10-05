@@ -14,6 +14,21 @@ body {
 header {
     padding: 20px;
 }
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Empilha os itens em dispositivos pequenos */
+        align-items: flex-start; /* Alinha à esquerda */
+    }
+
+    ul {
+        flex-direction: column; /* Coloca os links em coluna */
+        gap: 10px; /* Espaçamento entre os itens */
+    }
+
+    li {
+        font-size: 1em; /* Ajusta o tamanho da fonte */
+    }
+}
 
 nav {
     display: flex;
@@ -22,6 +37,9 @@ nav {
     max-width: 1200px; /* Limita a largura máxima */
     margin: 0 auto; /* Centraliza o nav */
     padding: 0 20px; /* Adiciona espaçamento lateral */
+    overflow: hidden;
+    position: relative; /* Adicione esta propriedade */
+    z-index: 10; /* Defina um z-index alto */
 }
 
 /* Centering Tech Mundo */
@@ -33,14 +51,27 @@ ul {
 }
 
 ul.left {
-    flex-grow: 1; /* Permite que o "Tech Mundo" ocupe espaço */
-    justify-content: center; /* Centraliza o texto */
-    display: flex; /* Para alinhar os itens dentro */
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
 }
 
 ul.right {
-    display: flex; /* Garante que os itens sejam flexíveis */
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+    gap: 10px; /* Espaçamento entre os links */
 }
+@media (max-width: 600px) {
+    li {
+        font-size: 1em; /* Ajuste o tamanho da fonte */
+    }
+
+    #btn {
+        font-size: 0.9em; /* Reduza o tamanho do botão em telas pequenas */
+        padding: 8px; /* Ajuste o preenchimento, se necessário */
+    }
+}
+
 
 ul.right a {
     text-decoration: none;
@@ -95,18 +126,37 @@ main {
 }
 
 .hero .container {
-    margin-top: 30vh;
-    background-color: red;
-    height: 90vh;
+    margin-top: 20vh;
+    min-height: 90vh;
     width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+@media (max-width: 600px) {
+    .hero .container {
+        width: 90vw; /* Largura ajustada para dispositivos móveis */
+    }
+
+    h1 {
+        font-size: 4em; /* Tamanho reduzido do título */
+    }
+
+    h3 {
+        font-size: 1.5em; /* Tamanho reduzido do subtítulo */
+    }
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 900px) {
+    h1 {
+        font-size: 5em; /* Ajuste intermediário para telas médias */
+    }
+}
 
 .logo img {
-    height: 15vh;
+    height: auto;
     width: auto; /* Ajusta a largura automaticamente */
 }
 
@@ -136,6 +186,11 @@ h3 {
 .cta-button:hover {
     background-color: #0056b3;
 }
+.features {
+    margin-top: 20px; /* Adicione um espaço acima da seção */
+    padding: 50px 20px;
+}
+
 
 .features, .testimonials, .cta-section {
     text-align: center;
@@ -187,8 +242,8 @@ h3 {
     }
 }
 footer {
-    background-color: #333;
-    color: white;
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
     padding: 20px 0;
     text-align: center;
 }
@@ -204,14 +259,15 @@ footer {
 }
 
 .social-links a {
-    color: white;
+    color: black; /* Cor dos ícones sociais */
     text-decoration: none;
     margin: 0 10px;
+    font-size: 1.5em; /* Aumenta o tamanho dos ícones */
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #21a1f1; /* Cor de hover para links sociais */
+    color: #21a1f1; /* Cor de hover para os ícones sociais */
 }
 
 /* Mobile responsiveness for footer */
@@ -220,8 +276,9 @@ footer {
         margin: 0 5px; /* Ajusta o espaço entre links em telas menores */
     }
 }
+
 .social-links a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 10px;
     font-size: 1.5em; /* Aumenta o tamanho dos ícones */
@@ -236,9 +293,9 @@ footer {
     grid-template-columns: repeat(3, 1fr); /* Define 3 colunas */
     gap: 20px; /* Espaçamento entre os itens */
     text-align: center;
-    padding: 50px 20px;
+    padding: 50px 70px;
     background-color: #f9f9f9; /* Cor de fundo clara */
-    max-width: 90%; /* Limita a largura a 80% da tela */
+    max-width: 85%; /* Limita a largura a 80% da tela */
     margin: 0 auto; /* Centraliza a seção */
 }
 
@@ -254,23 +311,67 @@ footer {
     background-color: white; /* Fundo branco para os itens */
     padding: 20px;
     border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
     transition: transform 0.3s; /* Animação suave */
+    text-align: left; /* Alinhamento à esquerda do texto */
+    cursor: pointer;
+}
+
+.highlight-item i {
+    font-size: 2em; /* Tamanho do ícone */
+    margin-bottom: 10px; /* Espaço abaixo do ícone */
 }
 
 .highlight-item:hover {
     transform: translateY(-5px); /* Levanta o item ao passar o mouse */
 }
+.icon-red {
+    color: #e74c3c; /* Vermelho */
+}
+
+.icon-blue {
+    color: #3498db; /* Azul */
+}
+
+.icon-green {
+    color: #2ecc71; /* Verde */
+}
+
+.icon-orange {
+    color: #e67e22; /* Laranja */
+}
+
+.icon-purple {
+    color: #9b59b6; /* Roxo */
+}
+
+.icon-teal {
+    color: #1abc9c; /* Verde-azulado */
+}
+
+.icon-pink {
+    color: #ff4d6d; /* Rosa */
+}
+
+.icon-brown {
+    color: #8e44ad; /* Marrom */
+}
+
+.icon-yellow {
+    color: #f1c40f; /* Amarelo */
+}
+
 
 .highlight-item h3 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: #007bff; /* Cor azul para os títulos */
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .highlight-item p {
     font-size: 1.2em;
     color: #666; /* Cor cinza para o texto */
+    text-align: left;
 }
 
 /* Estilos responsivos */
