@@ -64,7 +64,10 @@ li {
     color: #0004ff;
     padding: 10px;
     border-radius: 10px;
-    background-color: #75caff4b;
+    background-color: #75caff4b;    
+}
+#btn a{
+    text-decoration: none;
 }
 
 #btn:hover {
@@ -165,11 +168,52 @@ h3 {
     padding: 50px 20px;
     background-color: #f9f9f9; /* Cor de fundo clara */
 }
+.cta-section {
+    display: flex; /* Ativa o flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+    background-color: rgba(0, 0, 130, 0.452); /* Fundo da seção */
+    border-radius: 10px;
+}
 
+.logo {
+    position: relative; /* Permite que a logo seja posicionada normalmente */
+    z-index: 1; /* Garante que a logo esteja acima do fundo */
+    opacity: 0.9; /* Ajusta a opacidade da logo */
+    margin-right: 20px; /* Espaço entre a logo e o texto */
+}
+
+.text-container, .button-container {
+    position: relative; /* Para garantir que os textos fiquem acima da logo */
+    z-index: 2; /* Garante que o texto fique acima da logo */
+    color: white; /* Cor do texto */
+}
+
+.cta-section h1 {
+    font-size: 3.4em;
+    margin: 0; /* Remove margens para melhor alinhamento */
+}
+
+.cta-section p {
+    margin: 0; /* Remove margens para melhor alinhamento */
+}
+
+.button-container {
+    margin-left: auto; /* Faz o botão ficar à direita */
+}
+
+.text-container {
+    margin-top: 0; /* Remove top margin for alignment */
+    text-align: left; /* Align text to the left */
+}
+
+.button-container {
+    display: flex; /* Use flex for button container */
+    justify-content: flex-end; /* Align button to the right */
+}
 .feature-item {
     margin: 20px 0;
 }
-
 /* Highlights Section */
 .highlights {
     display: grid;
@@ -180,13 +224,11 @@ h3 {
     max-width: 85%; /* Limita a largura a 85% da tela */
     margin: 0 auto; /* Centraliza a seção */
 }
-
 .highlights h2 {
     grid-column: 1 / -1; /* Faz o título ocupar toda a largura do grid */
     font-size: 2.5em;
     margin-bottom: 30px;
 }
-
 /* Estilos dos itens do destaque */
 .highlight-item {
     background-color:#f9f9f9; /* Fundo branco para os itens */
@@ -196,7 +238,6 @@ h3 {
     text-align: left; /* Alinhamento à esquerda do texto */
     cursor: pointer;
 }
-
 .highlight-item i {
     font-size: 2em; /* Tamanho do ícone */
     margin-bottom: 10px; /* Espaço abaixo do ícone */
@@ -229,6 +270,14 @@ footer {
     max-width: 1200px; /* Limita a largura máxima */
     margin: 0 auto; /* Centraliza o footer */
     padding: 0 20px; /* Adiciona espaçamento lateral */
+    display: flex; /* Usar flexbox para alinhar os itens */
+    justify-content: space-between; /* Espaça os itens entre si */
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+.footer-container p {
+    margin: 0; /* Remove margens para melhor alinhamento */
+    text-align: left; /* Alinha o texto à esquerda */
 }
 
 .social-links {
