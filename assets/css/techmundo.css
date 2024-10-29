@@ -18,46 +18,59 @@ header {
 /* Navigation styles */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Mantém a distribuição entre as listas */
     align-items: center;
-    max-width: 1200px; /* Limita a largura máxima */
-    margin: 0 auto; /* Centraliza o nav */
-    padding: 0 20px; /* Adiciona espaçamento lateral */
-    overflow: hidden;
-    position: relative; /* Adicione esta propriedade */
-    z-index: 10; /* Defina um z-index alto */
-}
-
-ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center; /* Alinha verticalmente os itens */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 ul.left {
-    flex-grow: 1;
-    justify-content: center;
+    list-style-type: none; 
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Garante que a lista fique à esquerda */
 }
 
 ul.right {
     display: flex;
-    align-items: center; /* Alinha os itens verticalmente */
-    gap: 10px; /* Espaçamento entre os links */
+    align-items: center;
+    margin-left: auto; /* Garante que a lista fique à direita */
+    list-style-type: none; 
+    gap: 10px;
 }
+.toggle-button {
+    cursor: pointer;
+    font-size: 1.5em; /* Aumenta o tamanho do ícone */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border: none; /* Remove a borda padrão do botão */
+    background: none; /* Remove o fundo do botão */
+    transition: color 0.3s, transform 0.3s; /* Transições suaves */
+    margin-left: 15px; /* Espaçamento à esquerda do botão */
+}
+
+.toggle-button:hover {
+    color: #21a1f1; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Leve aumento de tamanho ao hover */
+}
+
 
 li {
     font-size: 1.2em;
     transition: color 0.3s;
     cursor: pointer;
 }
-
 #tech {
     color: black; /* Cor padrão */
     font-weight: 700;
+    padding: 10px 15px; /* Adiciona um pouco de espaçamento */
+    transition: color 0.3s; /* Transição suave */
+}
+#start{
+
 }
 
-#tech:hover {
+#tech:hover, #start:hover {
     color: #21a1f1; /* Cor de hover */
 }
 
@@ -397,19 +410,21 @@ footer {
         margin: 0 5px; /* Ajusta o espaço entre links em telas menores */
     }
 }
+
 /* Dark Theme Styles */
 .dark-theme {
     background-color: #121212; /* Dark background */
     color: #ffffff; /* Light text */
 }
+.dark-theme #tech,.dark-theme #start{
+    color: white;
+}
 .dark-theme h1{
     color: #ffffff;
 }
-
-.dark-theme header {
-    background-color: #1e1e1e; /* Darker header */
+.dark-theme #start:hover, .dark-theme #tech:hover {
+    color: #21a1f1; /* Cor de hover no tema escuro */
 }
-
 .dark-theme nav ul a, .dark-theme nav ul.right {
     color: #ffffff; /* White text for links */
 }
