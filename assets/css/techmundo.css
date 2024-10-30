@@ -341,13 +341,21 @@ footer {
     transition: 0.3s;
     color: #21a1f1; /* Cor de hover para os ícones sociais */
 }
+.location {
+    padding: 20px;
+    text-align: center;
+}
+
+.location h2 {
+    margin-bottom: 20px;
+}
+
 
 /* Comments Carousel */
 .comments-carousel {
     margin-top: 10vh;
     text-align: center;
     padding: 50px 20px;
-    background-color: ; /* Cor de fundo clara */
 }
 
 .comments-carousel h2 {
@@ -409,6 +417,13 @@ footer {
     .social-links a {
         margin: 0 5px; /* Ajusta o espaço entre links em telas menores */
     }
+}
+
+#map {
+    height: 400px; /* Mantenha uma altura adequada */
+    width: 100%;
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
 }
 
 /* Dark Theme Styles */
