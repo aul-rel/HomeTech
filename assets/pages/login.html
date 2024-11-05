@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="../css/login.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
 </head>
+
 <body>
-    <h2><a href="cadastro.php">← Voltar para <strong>Cadastro</strong></a></h2>
-    <h3>Sign Up to TechMundo</h3>
-    <div class="Foda">
-    <div class="login">
-        <h3>Sign Up to TechMundo</h3>
-        <form>
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Username" required>
-    
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="Email" required>
-    
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Password" required>
-    
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
+    <div class="container">
+        <div class="form-image">
+            <img src="../img/undraw_shopping_re_3wst.svg" alt="">
+        </div>
+        <div class="form">
+            <form action="../php/login.php" method="post">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Entrar</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="cadastro.php">Cadastre-se</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="username">Usuário</label>
+                        <input id="username" type="text" name="username" placeholder="Digite seu nome de usuário" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>
-<!--Siter.io inspiração-->
