@@ -18,3 +18,4 @@ const toggleButton = document.getElementById('theme-toggle');
             toggleButton.textContent = '🌙'; // Change icon to moon
         }
     });
+    

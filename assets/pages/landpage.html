@@ -1,13 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Landing Page - [Nome da Loja]</title>
+    <link rel="stylesheet" href="../css//landpage.css">
 </head>
 <body>
-    <header>
-        <img src="https://api.dicebear.com/9.x/initials/svg?seed=Alex Vini" alt="" srcset="" style="height: 10vh;">
-    </header>
+
+<!-- Header -->
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <img src="../img/logo-ref.png" alt="Logo da Loja">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+        <!-- Botão de Modo Dark -->
+        <button id="theme-toggle">🌙</button>
+
+    </div>
+</header>
+
+
+<!-- Seção de Boas-Vindas -->
+<section id="boas-vindas">
+    <div class="container">
+        <h1>Bem-vindo à HomeTech Solution</h1>
+        <p>Descubra os melhores produtos e serviços para você!</p>
+        <a href="#servicos" class="cta">Saiba Mais</a>
+    </div>
+</section>
+
+<!-- Nossos Serviços -->
+<section id="servicos">
+    <div class="container">
+        <h2>Nossos Serviços</h2>
+        <div class="services-grid">
+            <div class="service-card" id="service1" onclick="openLightbox('lightbox1')">
+                <h3>Consultoria</h3>
+                <p>Ajuda personalizada para você!</p>
+            </div>
+            <div class="service-card" id="service2" onclick="openLightbox('lightbox2')">
+                <h3>feedback</h3>
+                <p>Diga para nós o que achou do nosso site</p>
+            </div>
+            <div class="service-card" id="service3" onclick="openLightbox('lightbox3')">
+                <h3>Suporte ao Cliente</h3>
+                <p>Estamos aqui para ajudar 24/7.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Lightbox 1: Consultoria -->
+<div class="lightbox" id="lightbox1">
+    <div class="lightbox-content">
+        <span class="close" onclick="closeLightbox('lightbox1')">&times;</span>
+        
+        <div class="lightbox-inner">
+            <!-- Imagem que se move -->
+            <div class="lightbox-image">
+                <img src="../img/members/../movel/Customer Survey.gif" alt="Imagem em movimento">
+            </div>
+
+            <!-- Formulário de Consultoria -->
+            <div class="lightbox-form">
+                <h2>Agende Sua Consultoria</h2>
+                <form>
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+
+                    <label for="usuario">Nome de Usuário</label>
+                    <input type="text" id="usuario" placeholder="Escolha seu usuário" required>
+
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Escolha uma senha" required>
+
+                    <label for="horario">Horários Disponíveis</label>
+                    <select id="horario" required>
+                        <option value="08:00">08:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="14:00">02:00 PM</option>
+                        <option value="16:00">04:00 PM</option>
+                    </select>
+
+                    <button type="submit">Agendar Consultoria</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="feedback-lightbox" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close-btn" onclick="closeFeedbackLightbox()">×</span>
+        <h2>Ajude-nos a melhorar!</h2>
+        <p>Sua opinião é muito importante para nós. Preencha a pesquisa abaixo para nos contar como foi sua experiência.</p>
+        
+        <form id="feedback-form">
+            <label for="rating">Como você avaliaria nosso serviço?</label>
+            <select id="rating" name="rating">
+                <option value="1">1 - Muito Ruim</option>
+                <option value="2">2 - Ruim</option>
+                <option value="3">3 - Regular</option>
+                <option value="4">4 - Bom</option>
+                <option value="5">5 - Excelente</option>
+            </select>
+            <label for="likes">O que você mais gostou?</label>
+            <textarea id="likes" name="likes" placeholder="Conte-nos o que mais gostou..." required></textarea>
+            <label for="improvement">O que podemos melhorar?</label>
+            <textarea id="improvement" name="improvement" placeholder="Conte-nos o que podemos melhorar..." required></textarea>
+            <label for="comments">Comentários adicionais</label>
+            <textarea id="comments" name="comments" placeholder="Deixe seu comentário..." required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- Lightbox para Suporte ao Cliente -->
+<div id="lightbox3" class="lightbox">
+    <div class="lightbox-content">
+        <span class="close" onclick="closeLightbox('lightbox3')">×</span>
+        <h2>Suporte ao Cliente</h2>
+        <p>Nosso suporte está disponível 24/7 para garantir que sua experiência seja excelente. Entre em contato agora.</p>
+        <button>Comprar</button>
+    </div>
+</div>
+<!-- Sobre Nós -->
+<section id="sobre">
+    <div class="container">
+        <h2>Sobre Nós</h2>
+        <p>A Home TEC Solutions nasceu com o propósito de transformar a forma
+            como as pessoas interagem com a tecnologia em seu ambiente de
+            trabalho. Nossa equipe de especialistas está comprometida em oferecer
+            soluções personalizadas e eficientes para todos os seus desafios
+            tecnológicos. Desde a instalação de sistemas de som e imagem até a
+            configuração de redes domésticas inteligentes, estamos aqui para
+            simplificar sua vida digital.
+            A Home TEC Solutions acredita que a tecnologia deve ser acessível e
+            intuitiva. Por isso, oferecemos um serviço completo, que vai
+            Fazer com que a sua empresa esteja acompanhando a tecnologia.
+            Nosso objetivo é construir relacionamentos duradouros com nossos
+            clientes, oferecendo soluções sob medida e um atendimento de
+            excelência.
+            A Home TEC Solutions está sempre à frente, buscando as últimas
+            novidades do mercado para oferecer as melhores soluções aos nossos
+            clientes. Acreditamos que a tecnologia é uma ferramenta poderosa para
+            melhorar a qualidade de vida e estamos comprometidos em levar essa
+            inovação para todos os lares.
+            lar. Nossa missão é oferecer um serviço completo e personalizado,
+            transformando a casa dos nossos clientes em ambientes inteligentes e
+            conectados. Com uma equipe altamente qualificada e apaixonada por
+            tecnologia, estamos sempre atualizados com as últimas novidades do
+            mercado para garantir as melhores soluções para seus desafios.
+            Queremos te ajudar a criar um ambiente tecnológico que se adapte
+            perfeitamente às suas necessidades na empresa. Entre em contato
+            conosco e descubra como a Home TEC Solutions pode transformar sua
+            empresa.</p>
+        
+            <div class="team">
+                <!-- Programador 1 -->
+                <div class="team-member">
+                    <img src="../img/members/img-alex.jpg" alt="Programador 1">
+                    <h3>Alexandre Vinicius</h3>
+                    <p>Full-stack Developer. Acredita que a melhor solução vem da colaboração entre todas as camadas do desenvolvimento.</p>
+                </div>
+                
+                <!-- Programador 2 -->
+                <div class="team-member">
+                    <img src="../img/members/matheus.png" alt="Programador 2">
+                    <h3>Matheus Clasen</h3>
+                    <p>Desenvolvedor Back-end. Especialista em servidores e banco de dados. Sempre buscando otimizar processos e aprender mais.</p>
+                </div>
+                
+                <!-- Programador 3 -->
+                <div class="team-member">
+                    <img src="../img/members/Daniel.png" alt="Programador 3">
+                    <h3>Carlos Souza</h3>
+                    <p>Desenvolvedor Front-end. Apaixonado por criar interfaces interativas e responsivas. Gosta de desafios e café.</p>
+                </div>
+            
+                <!-- Programador 4 -->
+                <div class="team-member">
+                    <img src="../img/members/Lucca.png" alt="Programador 4">
+                    <h3>Lucca</h3>
+                    <p>Desenvolvedor Full-stack. Acredita que a simplicidade é a chave para o sucesso em projetos complexos.</p>
+                </div>
+            
+                <!-- Programador 5 -->
+                <div class="team-member">
+                    <img src="../img/members/Matheus Guedes.png" alt="Programador 5">
+                    <h3>Matheus Guedes Barbosa</h3>
+                    <p>Especialista em Banco de Dados. Ama desafios de otimização e soluções de arquitetura escaláveis.</p>
+                </div>
+            
+                <!-- Programador 6 -->
+                <div class="team-member">
+                    <img src="../img/members/user-profile.png" alt="Programador 6">
+                    <h3>Aurelio J. Falkoski </h3>
+                    <p>Desenvolvedor Front-end. Criativo e detalhista, sempre em busca da melhor experiência para o usuário.</p>
+                </div>
+            
+                <!-- Programador 7 -->
+                <div class="team-member">
+                    <img src="../img/members/user-profile.png" alt="Programador 7">
+                    <h3>Tinas</h3>
+                    <p>Desenvolvedor Back-end. Focada em criar soluções eficientes e escaláveis para grandes sistemas.</p>
+                </div>
+            
+                <!-- Programador 8 -->
+                <div class="team-member">
+                    <img src="../img/members/user-profile.png" alt="Programador 8">
+                    <h3>Fabricio</h3>
+                    <p>Desenvolvedor Mobile. Apaixonado por criar aplicativos rápidos e intuitivos para dispositivos móveis.</p>
+                </div>
+            
+                <!-- Programador 9 -->
+                <div class="team-member">
+                    <img src="../img/members/Renan.jpg" alt="Programador 9">
+                    <h3>Renan Calazans</h3>
+                    <p>Desenvolvedor Front-end. Tem como objetivo criar interfaces agradáveis, acessíveis e funcionais.</p>
+                </div>
+            
+                <!-- Programador 10 -->
+                <div class="team-member">
+                    <img src="../img/members/user-profile.png" alt="Programador 10">
+                    <h3>Luan</h3>
+                    <p>Desenvolvedor Back-end. Focado na construção de soluções eficientes e no gerenciamento de grandes sistemas.</p>
+                </div>
+</section>
+
+
+<!-- Projetos ou Portfólio -->
+<section id="projetos">
+    <div class="container">
+        <h2>Projetos Realizados</h2>
+        <div class="projects">
+            <!-- Projeto 1 -->
+            <div class="project">
+                <img src="../img/p1.png" alt="Projeto 1">
+                <div class="project-info">
+                    <h3>Jogo 2d</h3>
+                    <p>Desenvolvido pelo Gamemaker studio 2. Desenvolvemos um jogo com o público alvo entre 10-14 anos, o jogo ajuda você a ter um melhor raciocionio lógico e solução de problemas</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+            </div>
+            <!-- Projeto 2 -->
+            <div class="project">
+                <img src="../img/p2.png" alt="Projeto 2">
+                <div class="project-info">
+                    <h3>Site em Java</h3>
+                    <p>Desenvolvido pelo java web. O objetivo desse site é para você e sua família poder alugar bicicletas e fazer agendamentos com praticidade, a distância e sem muita burocracria</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+            </div>
+            <!-- Projeto 3 -->
+            <div class="project">
+                <img src="../img/p3.png" alt="Projeto 3">
+                <div class="project-info">
+                    <h3>Harmony School</h3>
+                    <p>Desenvolvido pelo Visual Studio code. Esse site tem o objetivo de vender cursos de músicas para qualquer pessoa que se interessar</p>
+                    <a href="#" class="btn">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contato -->
+<section id="contato">
+    <div class="container">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</section>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2024 HomeTech Todos os direitos reservados.</p>
+</footer>
 </body>
+<script>
+// Função para abrir o lightbox
+function openLightbox(id) {
+    const lightbox = document.getElementById(id);
+    lightbox.classList.add('show'); // Exibe o lightbox
+    lightbox.classList.remove('hide'); // Remove a classe hide
+}
+
+// Função para fechar o lightbox
+function closeLightbox(id) {
+    const lightbox = document.getElementById(id);
+    lightbox.classList.add('hide'); // Inicia a animação de fechamento
+    lightbox.classList.remove('show'); // Remove a classe show
+}
+
+// Adiciona um evento de clique no lightbox para fechar ao clicar fora do conteúdo
+const lightboxes = document.querySelectorAll('.lightbox');
+
+lightboxes.forEach(lightbox => {
+    lightbox.addEventListener('click', (e) => {
+        // Verifica se o clique foi fora do conteúdo
+        if (e.target === lightbox) {
+            closeLightbox(lightbox.id); // Fecha o lightbox
+        }
+    });
+});
+</script>
+<script>
+    // Função para abrir o lightbox
+function openLightbox(id) {
+    const lightbox = document.getElementById(id);
+    lightbox.classList.add('show'); // Exibe o lightbox
+    lightbox.classList.remove('hide'); // Remove a classe hide
+}
+
+// Função para fechar o lightbox
+function closeLightbox(id) {
+    const lightbox = document.getElementById(id);
+    lightbox.classList.add('hide'); // Inicia a animação de fechamento
+    lightbox.classList.remove('show'); // Remove a classe show
+}
+
+// Adiciona um evento de clique no lightbox para fechar ao clicar fora do conteúdo
+const lightboxess = document.querySelectorAll('.lightbox');
+
+lightboxess.forEach(lightbox => {
+    lightbox.addEventListener('click', (e) => {
+        // Verifica se o clique foi fora do conteúdo
+        if (e.target === lightbox) {
+            closeLightbox(lightbox.id); // Fecha o lightbox
+        }
+    });
+});
+
+</script>
+<script src="../js/darktheme.js"></script>
 </html>

@@ -10,7 +10,7 @@ include 'config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém os dados do formulário
     $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
+    $lastname = $_POST['lastname']
     $email = $_POST['email'];
     $celular = $_POST['number'];
     $senha = password_hash($_POST['password'], PASSWORD_DEFAULT); // Cria hash da senha
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Executa o cadastro e redireciona para o login se bem-sucedido
         if ($stmt->execute()) {
             // Cadastro bem-sucedido, redireciona para a página de login
-            header("Location: ../pages/login.html");
+            header("Location: ../pages/login.html?success=1");
             exit();
         } else {
             echo "Erro ao cadastrar: " . $conn->error;

@@ -27,9 +27,9 @@
         <section class="hero">
             <div class="container">
                 <div class="logo">
-                    <img src="../img/default_transparent_765x625.png" alt="Logo">
+                    <img src="../img/logo.png" alt="Logo" id="logo">
                 </div>
-                <h1>Site para suas compras Tech!</h1>
+                <h1>Bem vindo à HomeTech Solutions!</h1>
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe tempore blanditiis, consectetur numquam error, sapiente vel explicabo adipisci dolorem!</h3>
                 <a href="cadastro.php" class="cta-button">Comece agora ➔</a>
             </div>
@@ -39,20 +39,28 @@
             <h2>Recursos</h2>
             <div class="feature-item">
                 <h3>Fácil de Usar</h3>
-                <img src="../img/img-alex.jpg" alt="">
+                <img src="../img/movel/easytousegif.gif" alt="">
                 <p>Uma interface intuitiva que facilita suas compras.</p>
             </div>
             <div class="feature-item">
-                <img src="../img/img-alex.jpg" alt="">
                 <h3>Segurança</h3>
+                <img src="../img/movel/Security (1).gif" alt="">
                 <p>Transações seguras com criptografia de ponta a ponta.</p>
             </div>
             <div class="feature-item">
-                <img src="../img/img-alex.jpg" alt="">
                 <h3>Suporte 24/7</h3>
+                <img src="../img/movel/404ErrorPage.gif" alt="">
                 <p>Estamos aqui para ajudar a qualquer momento.</p>
             </div>
         </section>
+
+        <div id="lightbox" class="lightbox hidden">
+            <div class="lightbox-content">
+                <span class="close">&times;</span>
+                <div class="lightbox-body"></div>
+            </div>
+        </div>
+        
         <section class="highlights">
             <h2>Destaques do Nosso Serviço</h2>
         
@@ -114,9 +122,7 @@
         <section class="location">
             <h2>Visite Nossa Loja</h2>
             <div id="map" style="height: 600px; width: 50vw;; border-radius: 10px;"></div>
-            <script async
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGyQTh5xpZXLs_bmvnxfTz7ROx9FvuW-U&callback&callback=initMap">
-            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRdM6YbqwT8ZZDPys61EyXs0fdvCAAjIY&callback=initMap"></script>
         </section>
 <!-- Seção de Comentários -->
 <section class="comments-carousel">
@@ -175,19 +181,20 @@
         </div>
     </div>
 </section>
-        <!-- Seção de Chamada para Ação -->
-        <section class="cta-section">
-            <div class="logo">
-                <img src="../img/default_transparent_765x625.png" alt="Logo">
-            </div>
-            <div class="text-container">
-                <h1>Não espere e comece agora!</h1>
-                <p>Inscreva-se agora e aproveite nossas ofertas exclusivas!</p>
-            </div>
-            <div class="button-container">
-                <a href="cadastro.html" class="cta-button">Comece agora ➔</a>
-            </div>
-        </section>
+       <!-- Seção CTA reformulada -->
+<section class="cta-section">
+    <div class="cta-content">
+      <h2>Junte-se à nossa comunidade!</h2>
+      <p>
+        Descubra as vantagens de fazer parte de uma plataforma inovadora. Tenha acesso a recursos exclusivos, suporte dedicado e uma experiência incrível.
+      </p>
+      <a href="cadastro.php" class="cta-button">Comece Agora</a>
+    </div>
+    <div class="cta-image">
+      <img src="../img/movel/Community (2).gif" alt="Imagem representativa da comunidade">
+    </div>
+  </section>
+  
     </main>
     <hr>
    <footer>
@@ -208,7 +215,36 @@
     </div>
 </footer>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const highlightItems = document.querySelectorAll(".highlight-item");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxBody = document.querySelector(".lightbox-body");
+    const closeBtn = document.querySelector(".close");
+
+    // Abrir o lightbox ao clicar no item
+    highlightItems.forEach(item => {
+        item.addEventListener("click", () => {
+            lightboxBody.innerHTML = item.innerHTML; // Clona o conteúdo do item
+            lightbox.classList.remove("hidden");
+        });
+    });
+
+    // Fechar o lightbox ao clicar no botão de fechar
+    closeBtn.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+    });
+
+    // Fechar o lightbox ao clicar fora do conteúdo
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+            lightbox.classList.add("hidden");
+        }
+    });
+});
+</script>
 <script src="../js/darktheme.js"></script>
 <script src="../js/carrousel.js"></script>
+<script src="../js/imagem.js"></script>
 </html>
 <!--fazer crud com o feedback dos clientes-->
