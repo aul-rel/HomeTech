@@ -1,13 +1,6 @@
-/* login.css */
-
-/* Container geral */
-<<<<<<< HEAD
-=======
 body {
     font-family: 'Roboto', sans-serif;
 }
-
->>>>>>> 0121ab3469b69d2efad871d54eb8a79401b23db9
 .container {
     display: flex;
     align-items: center;
@@ -86,13 +79,10 @@ body {
 
 .continue-button button:hover {
     background-color: #218838;
-<<<<<<< HEAD
 }
 .success-message {
     color: #28a745;
     font-size: 16px;
     margin-bottom: 20px;
     text-align: center;
-=======
->>>>>>> 0121ab3469b69d2efad871d54eb8a79401b23db9
 }
